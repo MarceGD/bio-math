@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva consulta</title>
+    <link rel = "stylesheet"  href={{ url_for('static', filename='estilos.css')}}>
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/">Pagina Principal</a>
+            <a href="index">Ver Preguntas</a>
+            <a href="respuestas">Ver Respuestas</a>
+            
+        </nav>
+    </header>
+    <form class="form" method="post" action="/store" enctype="multipart/form-data">
+        Nombre:
+        <input type="text" name="txtNombre" id="txtNombre">
+        <br>
+        Posicion:
+        <input type="text" name="txtPosicion" id="txtPosicion">
+        <br>
+        Clasificacion:
+        <input type="text" name="txtFoto" id="txtFoto">
+        <br><br>
+        <input type="submit" name="storechaki"value="Agregar">
+        <br>
+        
+    </form>
+{% include 'footer.html' %}
+</body>
+</html>

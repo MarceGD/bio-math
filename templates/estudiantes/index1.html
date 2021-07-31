@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet"  href={{ url_for('static', filename='estilos.css') }}>
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+    <title>Respuestas</title>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/">Pagina Principal</a>
+            <a href="respuestas">Actualizar</a>
+            <a href="/index">Ver Preguntas</a>
+            <a href="create">Nueva Consulta</a>
+        </nav>
+    </header>
+<body>
+    <div>
+        <table class="table table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Clasificacion</th>
+                    <th>Nombre</th>
+                    <th >Posicion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for gene in genes %}
+                <tr>
+                    <td>{{gene[3]}}</td>
+                    <td>{{gene[1]}}</td>
+                    <td>{{gene[2]}}</td>
+                    <td>
+                        <a href="/edit/{{gene[0]}}">Editar</a> | 
+                        <a href="/destroy1/{{gene[0]}}">Eliminar</a>
+                    </td>
+
+                        
+                    
+                </tr>    
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva consulta</title>
+    <link rel = "stylesheet"  href={{ url_for('static', filename='estilos.css')}}>
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/">Pagina Principal</a>
+            <a href="index">Ver Preguntas</a>
+            <a href="respuestas">Ver Respuestas</a>
+            
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Formulario para editar</h1>
+        {% for gene in genes %}
+        <form class="form" method="POST" action="/update1" enctype="multipart/form-data">
+            ID a modificar:
+            <input type="text" name="txtId" value="{{gene[0]}}" id="txtIdd">
+            <br>
+            Nombre:
+            <input type="text" name="txtNombre" value="{{gene[1]}}" id="txtNombre">
+            <br>
+            Posicion:
+            <input type="text" name="txtPosicion" value="{{gene[2]}}" id="txtPosicion">
+            Clasificacion:
+            <input type="text" name="txtClas" value="{{gene[3]}}" id="txtFoto">
+            <br><br>
+            <input type="submit" value="Aceptar">
+            <br>
+            
+        </form>
+        {% endfor %}
+    </div>"
+    
+</body>
+</html>

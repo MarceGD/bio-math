@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Matematicas</title>
+    <link rel="stylesheet"  href={{url_for('static', filename='estilos.css') }}>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+</head>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/create">Espacio de Consultas</a>
+        </nav>
+        <section class="textos-header">
+            <h1>El equipo de trabajo</h1>
+            <h2>Somos los que somos y estamos lo que estamos</h2>
+        </section>
+
+<div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-2.55,40.75 C188.76,87.13 365.40,149.30 503.10,6.22 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </header>
+    <main>
+        
+
+        <section class="clientes contenedor">
+            <h2 class="titulo">TEAM</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src ={{url_for('static', filename="img/iman2.jpeg") }} alt="">
+                    <div class="contenido-texto-card">
+                        <h4>CEO</h4>
+                        <p>Persona visionaria en cuanto a los Proyectos que deben ejecutarse</p>
+                        <a class="link"  href="https://www.linkedin.com/in/marcelo-gamarra-017692218/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img  src={{url_for('static', filename="img/marce1.jpg")}} alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Developer</h4>
+                        <p>Persona creativa y que materializa las ideas</p>
+                        <a class="link"  href="https://www.linkedin.com/in/marcelo-gamarra-017692218/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                
+            </div>  
+
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

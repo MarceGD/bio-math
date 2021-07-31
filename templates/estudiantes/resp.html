@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responder</title>
+    <link rel = "stylesheet" href={{ url_for('static', filename='estilos.css') }}/>
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/">Pagina Principal</a>
+            <a href="/respuestas">Ver Respuestas</a>
+            <a href="/acerca">Acerca de</a>
+        </nav>
+    </header>
+    <div>
+        {% with messages = get_flashed_messages()  %}
+            {% if messages %}
+            {% for message in messages %}
+            
+            <p> {{ message }}</p>
+            
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+       
+        
+        <form class="form" method="POST" action="/update" enctype="multipart/form-data" >
+            {%  for consulta in consultas %}
+            <label>Respondiendo la Consulta n°</label><input type="text" name='txtPregunta' value={{consulta[0]}} > <br><br>
+            {% endfor %}
+            <label>Nombre<input type="text" name="txtnombre" id="txtnombre"></label><br><br>
+            <label>Respuesta<input type="text" name="txtRespuesta" id="txtRespuesta"></label><br><br>
+            <input type="submit"  value="Agregar"><br><br>
+        </form>
+         
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

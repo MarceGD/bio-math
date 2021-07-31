@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Matematicas</title>
+    <link rel="stylesheet"  href={{url_for('static', filename='estilos.css') }}>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/acerca">Acerca de</a>
+            <a href="/create" target="_blank">Espacio de Consultas</a>
+            
+        </nav>
+        <section class="textos-header">
+            <h1>Matemáticas Aplicada a la Biología</h1><br><br>
+            <h2>Entiende las matemáticas desde otra perspectiva</h2>
+        </section>
+
+<div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-2.55,40.75 C188.76,87.13 365.40,149.30 503.10,6.22 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </header>
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">Nuestro producto</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src={{url_for('static', filename="img/portada1.jpg")}} alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>  1 </span>Aprende mas sobre matemáticas</h3><br>
+                    <p>Aprenderas las bases matematicas que estan presentes en cualquier proyecto para asi lograr un mayor entendimiento.</p>
+                    <h3><span>  2 </span>Aprende mas sobre Biologia</h3><br>
+                    <p>Potenciamos tu entendimiento en proceso biologicos, mediante el analisis de principios fisicos, quimicos y por supuesto matematica aplicada.</p>
+                    <h3><span>  3 </span>Te mostramos que estudios podes realizar</h3><br>
+                    <p>Con lo aprendido te potenciamos para que sepas cuales caminos y proyectos podes seguir para plantear nuevas hipótesis y resiolver problemas prácticos.</p>
+                </div>
+            </div>
+        </section>
+        <section class="about-services">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src={{url_for('static', filename="img/projects.png")}} alt="">
+                        <h3>Matemáticas</h3>
+                        <p>Aprende de manera completa los conceptos, demostraciones, simbología y otras herramientas útiles en el dia a dia.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src = {{url_for('static', filename="img/projects.png")}}    alt="">
+                        <h3>Bioinformatica</h3>
+                        <p>Contamos con cursos y asesoramientos en topicos de Bioinformatica.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src = {{url_for('static', filename="img/projects.png")}}    alt="">
+                        <h3>Proyectos de Investigacion</h3>
+                        <p>Te ayudadamos a como plantear un proyecto y cuales son todas sus etapas para la implementación</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Portafolio</h2>
+                <h3 align="justify" >Debido a los preocupantes sucesos de los ultimos años, como la pandemia de la COVID-19 y el aumento de la tasa de mortalidad relacionada a otras patologias, como el cancer o porvocada por vectores virales, la comprension y la busqueda de nuevos farmacos ha ganado importancia en el campo de la biologia, principalmente la Bioinformatica.
+                Gracias al desarrollo tecnologico y el crecimiento exponencial de datos de los ultimos años, los analisis que se pueden realizar en funcion de buscar nuevas hipotesis y respuestas ante estos problemas, son infinitas. Sin embargo, la comprension y uso de las nuevas tecnologias informaticas con un enfoque biologico requiere de mucho estudio y dedicacion.
+
+                Por este motivo te ofrecemos un portafolio de herramientas en las que podras no solo aprender, sino conocer sobre bioinformatica aplicada a la comprension de la biologia. Dentro de estas herramientas tendras un espacio para leer, subir y consultar particularidades sobre diferentes topicos. Ademas podras desarrollar tus propios scrits y comparti con la comunidad de bioinformaticos!!  </h3><br><br><br>
+                <div class="galeria-port">
+                    
+                    <div class="imagen-port">
+                        <img src={{url_for('static', filename="img/portada1.jpg")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <p>Topicos de Matematicas</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src={{url_for('static', filename="img/biologia1.jpg")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <p>Biología</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src={{url_for('static', filename="img/genes.jpg")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <p><a class="link" href="create1" target="_blank">Agregar Genes</a> </p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src={{url_for('static', filename="img/genes2.jpg")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <a class="link" href="index1" target="blanck">Genes descriptos</a>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src={{url_for('static', filename="img/vmd-protein.png")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <p>Uso de VMD para proteinas</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port"><!--Imagen 5-->
+                        <img src={{url_for('static', filename="img/python1.jpg")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <p>Crea tus scripts</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port"><!--Imagen 7-->
+                        <img src={{url_for('static', filename="img/comunidad.jpg")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <p>Asesoria informatica</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src={{url_for('static', filename="img/comunidad2.jpg")}} alt="">
+                        <div class="hover-galeria">
+                            <img src={{url_for('static', filename="img/imagen7.jpg")}} alt="">
+                            <p>Comunidad</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="clientes contenedor">
+            <h2 class="titulo">Frases Matematicas</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src = {{url_for('static', filename="img/darwin.jpeg")}} alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Darwin</h4>
+                        <p>Las Matematicas parecen dotar a uno de un nuevo sentido.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src = {{url_for('static', filename="img/imagen8.jpeg")}} alt="">
+                    <div class="contenido-texto-card">
+                        <h4>JL</h4>
+                        <p>Si el sistema no sirve para hacer estadistica, entonces para que mierda sirve</p>
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

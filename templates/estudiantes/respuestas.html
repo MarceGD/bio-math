@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet"  href={{ url_for('static', filename='estilos.css') }}>
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Respuestas</title>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/">Pagina Principal</a>
+            <a href="respuestas">Actualizar</a>
+            <a href="/index">Ver Preguntas</a>
+            <a href="create">Nueva Consulta</a>
+        </nav>
+    </header>
+    <div>
+            {% with messages = get_flashed_messages()  %}
+            {% if messages %}
+            {% for message in messages %}
+            
+            <p> {{ message }}</p>
+            
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        <table class="table table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Quien responde</th>
+                    <th colspan="4">Consulta </th>
+                </tr>
+            </thead>
+            <tbody>
+                {%  for consulta in consultas %}
+                    <tr bgcolor="#CBE7EC">
+                        <td></td>
+                        <td colspan="4">{{consulta[0]}}</td>
+                    </tr>                     
+                    <tr>
+                        <td>{{consulta[3]}}</td>
+                        <td>{{consulta[2]}}</td>
+                        <td><i onclick="myFunction(this)" class="far fa-thumbs-up fa-2x" ></i>
+
+                            <script>
+                            function myFunction(x) {
+                                x.classList.toggle("fa-thumbs-down");
+                                }
+                            </script></td> 
+
+                        
+                        
+                    </tr> 
+                   
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

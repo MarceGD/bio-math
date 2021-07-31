@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva consulta</title>
+    <link rel = "stylesheet"  href={{ url_for('static', filename='estilos.css')}}>
+    <script src="https://kit.fontawesome.com/2f4010d736.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="/">Pagina Principal</a>
+            <a href="index">Ver Preguntas</a>
+            <a href="respuestas">Ver Respuestas</a>
+            
+        </nav>
+    </header>
+    <div>
+        {% with messages = get_flashed_messages()  %}
+        {% if messages %}
+        {% for message in messages %}
+        <p align="center"><br><br> {{ message }} <br><br><a class="link2" href="/">Volver</a><br><br> <a class="link2" href="/index">Ver preguntas</a></p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form class="form" method="POST" action="/store" enctype="multipart/form-data">
+            <legend>Consultas</legend><br><br>
+            <label>Nombre<input type="text" name="txtNombre" id="txtNombre"></label><br><br>
+            <label>Apellido<input type="text" name="txtApellido" id="txtApellido"></label><br><br>
+            <label>Correo<input type="text" name="txtCorreo" id="txtCorreo"></label><br><br>
+            <label>Consulta <input type="text" name="txtConsulta" id="txtConsulta"></label><br><br>
+            <input type="checkbox"  id="chek" name="condiciones" checked="checked" />   Incluye imagen <br><br>
+            <label>Imagen<input type="file" name="txtFoto" id="txtFoto"></label><br><br>
+            <input type="submit" name="form1-submit"  value="Agregar"><br><br>
+        </form>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
+
